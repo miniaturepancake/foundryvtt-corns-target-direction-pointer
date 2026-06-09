@@ -1,4 +1,4 @@
-// Target Direction Pointer — Foundry VTT v13 Module
+// Target Direction Pointer — Foundry VTT v13/v14 Module
 // Draws directional arrows on token borders pointing toward each target.
 
 const MODULE_ID = 'target-direction-pointer';
