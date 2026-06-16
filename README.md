@@ -1,4 +1,4 @@
-# Target Direction Pointer
+# Corn's Target Direction Pointer
 
 A [Foundry VTT](https://foundryvtt.com/) module that draws directional arrows on the border of your token pointing toward each of your targets.
 
