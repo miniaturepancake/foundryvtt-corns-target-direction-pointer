@@ -12,16 +12,32 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Extract version from tag
         id: version
         run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
 
-      - name: Update version in module.json
+      - name: Stamp version and release URLs into module.json
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          TAG: ${{ github.ref_name }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
         run: |
-          jq '.version = "${{ steps.version.outputs.version }}"' module.json > tmp.json
+          jq --arg version "$VERSION" \
+             --arg url "$REPO_URL" \
+             --arg manifest "$REPO_URL/releases/latest/download/module.json" \
+             --arg download "$REPO_URL/releases/download/$TAG/module.zip" \
+             '.version = $version
+              | .url = $url
+              | .manifest = $manifest
+              | .download = $download
+              | .bugs = ($url + "/issues")
+              | .changelog = ($url + "/releases")' \
+             module.json > tmp.json
           mv tmp.json module.json
+          jq -e '.version == env.VERSION' module.json > /dev/null
+          cat module.json
 
       - name: Create module zip
         run: |
@@ -29,6 +45,7 @@ jobs:
             module.json \
             scripts/ \
             languages/ \
+            assets/ \
             LICENSE \
             README.md
 

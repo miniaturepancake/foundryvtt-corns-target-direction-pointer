@@ -1,11 +1,11 @@
 {
   "id": "target-direction-pointer",
-  "title": "Target Direction Pointer",
+  "title": "Corn's Target Direction Pointer",
   "description": "Draws directional arrows on token borders pointing toward each target. Arrows are color-coded by relationship, scale with token size and distance, and include a subtle breathing animation. GMs see targeting for all players.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "compatibility": {
     "minimum": "13",
-    "verified": "14"
+    "verified": "14.367"
   },
   "authors": [
     {
@@ -22,9 +22,11 @@
       "path": "languages/en.json"
     }
   ],
-  "url": "https://github.com/miniaturepancake/foundryvtt-module-target-direction-pointer",
-  "manifest": "https://github.com/miniaturepancake/foundryvtt-module-target-direction-pointer/releases/latest/download/module.json",
-  "download": "https://github.com/miniaturepancake/foundryvtt-module-target-direction-pointer/releases/latest/download/module.zip",
+  "url": "https://github.com/miniaturepancake/foundryvtt-corns-target-direction-pointer",
+  "manifest": "https://github.com/miniaturepancake/foundryvtt-corns-target-direction-pointer/releases/latest/download/module.json",
+  "download": "https://github.com/miniaturepancake/foundryvtt-corns-target-direction-pointer/releases/latest/download/module.zip",
+  "bugs": "https://github.com/miniaturepancake/foundryvtt-corns-target-direction-pointer/issues",
+  "changelog": "https://github.com/miniaturepancake/foundryvtt-corns-target-direction-pointer/releases",
   "license": "LICENSE",
   "readme": "README.md"
 }

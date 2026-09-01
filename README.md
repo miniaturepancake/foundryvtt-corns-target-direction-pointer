@@ -2,7 +2,7 @@
 
 A [Foundry VTT](https://foundryvtt.com/) module that draws directional arrows on the border of your token pointing toward each of your targets.
 
-![Foundry VTT v13](https://img.shields.io/badge/Foundry-v13-green)
+![Foundry VTT v13 | v14](https://img.shields.io/badge/Foundry-v13%20%7C%20v14-green)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue)
 
 > **Note:** Module contains no AI-generated art or game content. I came up with the idea and guided the design decisions; [Claude](https://claude.ai) (Anthropic) assisted with the code, settings, and documentation.
@@ -19,6 +19,7 @@ A [Foundry VTT](https://foundryvtt.com/) module that draws directional arrows on
 - **Self-target indicator** — a centered ring when targeting your own token
 - **GM "show all" mode** — see targeting arrows on every player's character token
 - **Subtle breathing animation** — gentle pulse (configurable or disable)
+- **Visibility aware** — no arrows on tokens you cannot see, including tokens on a Scene Level that is not currently displayed (Foundry v14)
 - **Keyboard toggle** — no default binding; assignable in Configure Controls
 - **Fully configurable** — every parameter adjustable in Module Settings
 
@@ -38,13 +39,13 @@ A [Foundry VTT](https://foundryvtt.com/) module that draws directional arrows on
 1. In Foundry VTT, go to **Add-on Modules** → **Install Module**
 2. Paste this URL into the **Manifest URL** field:
    ```
-   https://github.com/miniaturepancake/foundryvtt-module-target-direction-pointer/releases/latest/download/module.json
+   https://github.com/miniaturepancake/foundryvtt-corns-target-direction-pointer/releases/latest/download/module.json
    ```
 3. Click **Install**
 
 ### Manual
 
-1. Download `module.zip` from [Releases](https://github.com/miniaturepancake/foundryvtt-module-target-direction-pointer/releases)
+1. Download `module.zip` from [Releases](https://github.com/miniaturepancake/foundryvtt-corns-target-direction-pointer/releases)
 2. Extract to `<FoundryData>/Data/modules/target-direction-pointer/`
 3. Restart Foundry and enable the module in your world
 
@@ -73,6 +74,8 @@ All settings are per-client.
 | Friendly Color | #44ddaa | Friendly-to-friendly targeting |
 | Neutral Color | #f0c020 | Same-hostile or ambiguous targeting |
 
+The three color settings use Foundry's native color picker.
+
 ## Color Logic
 
 | Source → Target | Color | Reasoning |
@@ -85,7 +88,7 @@ All settings are per-client.
 
 ## Compatibility
 
-- **Foundry VTT**: v13
+- **Foundry VTT**: v13 and v14 (verified against 14.367)
 - **Systems**: System-agnostic
 - **Conflicts**: None known
 
